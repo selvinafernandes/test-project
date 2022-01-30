@@ -5,10 +5,14 @@
       <product-information :info="productInfo"></product-information>
     </div>
     <div class="product-data col-md-6">
-      <product-variant :variants="variants"></product-variant>
+      <div class="product-info p-3">
+        <span class="product-brand">{{brandInfo.name}}</span>
+        <h1 class="product-title">{{productInfo.title}}</h1>
+      </div>
+      <product-variant :variants="variants" @variant="variant"></product-variant>
       <Button :classes="['btn-primary', 'btn-price']" >
         <span>Add to cart</span>
-        <span></span>
+        <span>{{cartPrice}}</span>
       </Button>
     </div>
   </div>
@@ -29,6 +33,7 @@ export default {
   },
   computed: {
     ...mapGetters('product', ['variants', 'images', 'productInfo', 'brandInfo']),
+    ...mapGetters('cart', ['cartPrice'])
   },
   components: {
     Button,
@@ -45,14 +50,35 @@ export default {
     this.$store.dispatch('product/getProductListing');
   },
   methods: {
-   
+    variant(qty, id, price) {
+      console.log(qty)
+      if (qty === 0) {
+        this.data.splice(this.data.findIndex((item) => item.id === id), 1);
+      } else {
+        if (this.data.findIndex((item) => item.id === id) === -1){
+          this.data.push({ qty, id, price })
+        } else {
+          const findItem = this.data.find((item) => item.id === id);
+          findItem.qty = qty;
+        }
+      }
+      this.$store.commit('cart/setCartPrice', this.data);
+    },
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .product-listing {
   margin: 0 20px;
+}
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.product-brand {
+  color: #ababab;
+  text-decoration: underline;
 }
 </style>

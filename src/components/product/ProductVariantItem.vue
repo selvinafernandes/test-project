@@ -64,7 +64,6 @@ export default {
 .product-variant-item {
   display: grid;
   grid-template-columns: 4fr 3fr 3fr 1fr 1fr;
-  grid-template-rows: 1fr;
   position: relative;
 }
 

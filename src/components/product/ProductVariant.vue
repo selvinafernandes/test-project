@@ -38,8 +38,10 @@ export default {
 .product-variant-columns {
   display: grid;
   grid-template-columns: 4fr 3fr 3fr 1fr 1fr;
-  grid-template-rows: 1fr;
   position: relative;
 }
 
+.product-variant {
+  padding: 0 20px;
+}
 </style>
