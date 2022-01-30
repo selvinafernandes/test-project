@@ -22,7 +22,7 @@ export default {
     
   },
   components: {
-   
+    Button
   },
   data() {
     return {
@@ -30,7 +30,7 @@ export default {
     }
   },
   created() {
-    
+    this.$store.dispatch('products/getProductListing');
   },
   methods: {
    
@@ -40,5 +40,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  
+
 </style>
