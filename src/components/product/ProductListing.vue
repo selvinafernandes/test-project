@@ -2,6 +2,7 @@
   <div class="product-listing row">
     <div class="product-carousel col-md-6">
       <product-carousel :images="images"></product-carousel>
+      <product-information :info="productInfo"></product-information>
     </div>
     <div class="product-data col-md-6">
       <Button :classes="['btn-primary', 'btn-price']" >
@@ -16,6 +17,7 @@
 
 import { mapGetters } from 'vuex';
 import ProductCarousel from '../product/ProductCarousel.vue';
+import ProductInformation from '../product/ProductInformation.vue';
 import Button from '../common/Button.vue';
 
 export default {
@@ -28,7 +30,8 @@ export default {
   },
   components: {
     Button,
-    ProductCarousel
+    ProductCarousel,
+    ProductInformation
   },
   data() {
     return {
