@@ -1,14 +1,16 @@
 <template>
   <div id="app">
+    <product-listing></product-listing>
   </div>
 </template>
 
 <script>
+import ProductListing from '../src/components/product/ProductListing.vue';
 
 export default {
   name: 'App',
   components: {
-    
+    ProductListing
   }
 }
 </script>

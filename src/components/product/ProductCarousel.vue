@@ -6,8 +6,9 @@
     background="#ababab"
     img-width="1024"
     img-height="480"
+    class="product-carousel"
     >
-    <b-carousel-slide img-src="">
+    <b-carousel-slide v-for="(image,index) in images" :key="index" :img-src="image.big">
     </b-carousel-slide>
   </b-carousel>
 
@@ -16,7 +17,7 @@
 <script>
 
 export default {
-  name: 'Carousel',
+  name: 'ProductCarousel',
   props: {
     images: Array
   },
