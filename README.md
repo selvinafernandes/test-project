@@ -1,4 +1,6 @@
 # test-project
+This project contains a basic demonstration of getting data from api and dividing it over components. 
+It uses Bootstrap-Vue components for easier access to functionality.
 
 ## Project setup
 ```
