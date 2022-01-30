@@ -16,6 +16,8 @@
   color: #333;
   border: 1px solid #fff;
   padding: 0.75rem 1.25rem;
+  margin: 5px 0;
+  width: 100%;
 }
 .btn.btn-primary {
   background-color: #333;
@@ -28,7 +30,11 @@
   opacity: .5;
 }
 .btn.btn-price {
+  background-color: $color-green;
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+.btn.btn-default {
+  border: 1px solid $color-lightgrey;
 }

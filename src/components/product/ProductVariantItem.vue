@@ -3,15 +3,19 @@
     <div class="product-variant-add">
       <button
         type="button"
-        class="btn btn-default"
+        class="btn"
         @click="addQuantity"
       >
         <b-icon icon="plus"></b-icon>
       </button>
-      <input type="text" placeholder="0" :value="variantQuantity"/>
+      <input type="text" 
+        placeholder="0" 
+        :value="variantQuantity"
+        @input="$emit('input', $event.target.value, variant.id, variant.price)"
+        />
       <button
         type="button"
-        class="btn btn-default"
+        class="btn"
         @click="removeQuantity"
       >
         <b-icon icon="dash"></b-icon>
