@@ -5,6 +5,7 @@
       <product-information :info="productInfo"></product-information>
     </div>
     <div class="product-data col-md-6">
+      <product-variant :variants="variants"></product-variant>
       <Button :classes="['btn-primary', 'btn-price']" >
         <span>Add to cart</span>
         <span></span>
@@ -18,6 +19,7 @@
 import { mapGetters } from 'vuex';
 import ProductCarousel from '../product/ProductCarousel.vue';
 import ProductInformation from '../product/ProductInformation.vue';
+import ProductVariant from '../product/ProductVariant.vue';
 import Button from '../common/Button.vue';
 
 export default {
@@ -31,7 +33,8 @@ export default {
   components: {
     Button,
     ProductCarousel,
-    ProductInformation
+    ProductInformation,
+    ProductVariant
   },
   data() {
     return {

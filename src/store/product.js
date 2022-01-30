@@ -46,7 +46,7 @@ const products = {
           .then(
             response => {
               commit('setProductInfo', response.data.data.storefrontBySlug.listing);
-              commit('setStoreFront', response.data.data.storefrontBySlug);
+              commit('setStorefront', response.data.data.storefrontBySlug);
               commit('setData', { listing: response.data.data.storefrontBySlug.listing, options: ['variants', 'images', 'categories']});
               resolve(response.data);
             },
